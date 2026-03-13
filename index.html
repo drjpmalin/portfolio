@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josh Malin | Video Editor & Post-Production Specialist</title>
+  <meta name="description" content="Portfolio of Josh Malin, video editor and post-production specialist.">
+  <style>
+    :root {
+      --bg: #0d0f12;
+      --panel: #15191f;
+      --line: #262c35;
+      --text: #f4f6f8;
+      --muted: #a8b0ba;
+      --max: 1080px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #0c0f13 0%, #10141a 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0 0;
+    }
+
+    .site-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 32px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .headshot-wrap {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .headshot {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .subhead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 58ch;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: #0d0f12;
+      border-color: var(--text);
+    }
+
+    .reel-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    }
+
+    .reel-label {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #090b0d;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .contact-line {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .contact-line a {
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .headshot-wrap {
+        max-width: 360px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 16px;
+        align-items: start;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .subhead {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="site-name">Josh Malin</div>
+  </header>
+
+  <main class="hero">
+    <section class="container hero-grid">
+      <div class="headshot-wrap">
+        <img src="headshot2026.jpg" alt="Josh Malin headshot" class="headshot">
+      </div>
+
+      <div>
+        <div class="eyebrow">Video Editor • Post-Production • Motion Graphics</div>
+        <h1>Josh Malin</h1>
+        <p class="subhead">
+          Video editor and post-production specialist with a background in commercial, branded, and field production. Experienced in shaping polished edits, motion graphics support, color, audio cleanup, and fast-turnaround delivery.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="https://vimeo.com/922175413" target="_blank" rel="noopener noreferrer">Open Reel on Vimeo</a>
+          <a class="button" href="mailto:joshuapaulmalin@gmail.com">joshuapaulmalin@gmail.com</a>
+        </div>
+
+        <div class="reel-card">
+          <p class="reel-label">Demo Reel</p>
+          <div class="video-wrap">
+            <iframe
+              src="https://player.vimeo.com/video/922175413?title=0&byline=0&portrait=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="contact-line">
+            Denver, CO • Available for remote opportunities •
+            <a href="mailto:joshuapaulmalin@gmail.com">joshuapaulmalin@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
