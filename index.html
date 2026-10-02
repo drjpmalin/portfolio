@@ -3,235 +3,478 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Josh Malin | Video Editor & Post-Production Specialist</title>
-  <meta name="description" content="Portfolio of Josh Malin, video editor and post-production specialist.">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Josh Malin | Videographer, Video Editor &amp; Multimedia Producer</title>
+  <meta name="description" content="Josh Malin is a Lakewood, Colorado videographer and video editor with 15+ years of experience. Explore interview-led video, corporate video, commercial production, and solo field work.">
+  <link rel="canonical" href="https://joshmalinmedia.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Josh Malin | Videographer &amp; Video Editor">
+  <meta property="og:description" content="15+ years in production and post-production. Selected video work, corporate and branded content, and independent field production.">
+  <meta property="og:url" content="https://joshmalinmedia.com/">
+  <meta property="og:image" content="https://joshmalinmedia.com/headshot2026.jpg">
+  <meta property="og:image:alt" content="Josh Malin">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315191f'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23f4f6f8'%3EJM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://player.vimeo.com">
   <style>
     :root {
       --bg: #0d0f12;
       --panel: #15191f;
-      --line: #262c35;
+      --line: #2b323b;
       --text: #f4f6f8;
-      --muted: #a8b0ba;
-      --max: 1080px;
+      --muted: #adb6c1;
+      --accent: #a4d4c4;
+      --max: 1160px;
       --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: linear-gradient(180deg, #0c0f13 0%, #10141a 100%);
       color: var(--text);
-      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-
-    a {
-      color: var(--text);
-      text-decoration: none;
+    ::selection { color: var(--bg); background: var(--accent); }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:hover { color: var(--accent); }
+    a:focus-visible, button:focus-visible, iframe:focus-visible, [tabindex]:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
     }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
+    img { max-width: 100%; display: block; }
+    p { margin: 0; }
+    h1, h2, h3 { margin: 0; line-height: 1.16; text-wrap: balance; }
+    h1 { font-size: clamp(2.75rem, 4.5vw, 4rem); letter-spacing: -.05em; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.035em; }
+    h3 { font-size: clamp(1.35rem, 2vw, 1.65rem); letter-spacing: -.025em; }
+    .container { width: min(calc(100% - 64px), var(--max)); margin-inline: auto; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      margin: -1px; overflow: hidden; clip-path: inset(50%);
+      white-space: nowrap; border: 0;
     }
-
-    header {
-      padding: 24px 0 0;
+    .skip-link {
+      position: absolute; left: 16px; top: -100px; z-index: 5;
+      background: var(--text); color: var(--bg); padding: 12px 20px;
+      border-radius: 8px; font-weight: 600;
     }
-
+    .skip-link:focus { top: 16px; color: var(--bg); }
+    .site-header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; min-height: 88px; border-bottom: 1px solid var(--line);
+    }
     .site-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: .875rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; text-decoration: none; white-space: nowrap;
+      display: inline-flex; align-items: center; min-height: 44px;
     }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 32px 0 64px;
+    .site-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+    .site-nav a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: var(--muted); font-size: .875rem; text-decoration: none;
     }
-
+    .site-nav a:hover { color: var(--text); text-decoration: underline; }
+    .hero { padding: 54px 0 56px; }
     .hero-grid {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 40px;
-      align-items: center;
+      display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 48px; align-items: start;
     }
-
-    .headshot-wrap {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 14px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    .hero-grid > *, .project-grid > *, .feature-details > *,
+    .vertical-grid > *, .vertical-body > *, .about-grid > * { min-width: 0; }
+    .positioning {
+      margin: 20px 0 16px; max-width: none;
+      font-size: 1rem; font-weight: 600; color: var(--accent); line-height: 1.6;
     }
-
+    .positioning .role-line { display: block; }
+    .positioning .role { display: inline-block; }
+    .positioning .separator { color: var(--muted); padding-inline: 2px; }
+    .subhead { max-width: 43ch; color: var(--muted); font-size: 1rem; }
+    .hero-intro { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .hero-copy { min-width: 0; }
+    .hero-copy h1 { font-size: clamp(2.75rem, 4vw, 3.25rem); letter-spacing: -.045em; }
     .headshot {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      display: block;
-      border-radius: 12px;
+      width: 160px; height: 200px;
+      object-fit: cover; object-position: 50% 38%;
+      border: 1px solid var(--line); border-radius: 14px;
     }
-
-    .eyebrow {
-      color: var(--muted);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .subhead {
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 58ch;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 999px;
-      font-weight: 600;
-      border: 1px solid var(--line);
-      background: var(--panel);
-    }
-
-    .button.primary {
-      background: var(--text);
-      color: #0d0f12;
-      border-color: var(--text);
-    }
-
+    .hero-location { margin-top: 6px; font-size: .875rem; color: var(--muted); }
+    .hero-link { display: inline-flex; min-height: 44px; align-items: center; margin-top: 14px; font-size: .875rem; font-weight: 600; gap: 10px; }
     .reel-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      padding: 18px; background: var(--panel); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: 0 18px 40px rgb(0 0 0 / 18%);
     }
-
-    .reel-label {
-      margin: 0 0 14px;
-      font-size: 0.95rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    .reel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: -6px 0 8px; }
+    .reel-heading h2 { font-size: .8125rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .external-link {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+      font-size: .8125rem; color: var(--muted); text-decoration: none;
     }
-
+    .external-link:hover { text-decoration: underline; }
+    
     .video-wrap {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      overflow: hidden;
-      border-radius: 14px;
-      background: #090b0d;
-      border: 1px solid rgba(255,255,255,0.06);
+      position: relative; width: 100%; aspect-ratio: 16 / 9;
+      overflow: hidden; border-radius: 12px; background: #07090b;
+      border: 1px solid rgb(255 255 255 / 7%);
     }
+    .video-wrap iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
 
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .video-launch { position: absolute; inset: 0; display: block; color: white; text-decoration: none; cursor: pointer; }
+    .video-launch img { width: 100%; height: 100%; object-fit: cover; }
+    .video-launch::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgb(0 0 0 / 65%)); pointer-events: none; }
+    .play-icon { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border: 1px solid rgb(255 255 255 / 60%); border-radius: 50%; display: grid; place-items: center; background: rgb(13 15 18 / 85%); z-index: 1; }
+    .play-icon svg { width: 24px; height: 24px; margin-left: 3px; fill: currentColor; }
+    .video-launch:hover .play-icon { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+    .video-launch:focus-visible { outline-offset: -5px; z-index: 2; }
+    .play-label { position: absolute; left: 18px; bottom: 14px; font-size: .875rem; font-weight: 600; z-index: 1; }
+    .reel-caption { margin-top: 12px; color: var(--muted); font-size: .8125rem; }
+    .selected-work { padding-top: 36px; border-top: 1px solid var(--line); }
+    .eyebrow {
+      font-size: .75rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
     }
-
-    .contact-line {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 0.98rem;
+    .eyebrow.accent { color: var(--accent); }
+    .feature-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    .feature-heading h3 { font-size: clamp(1.9rem, 3.2vw, 2.65rem); letter-spacing: -.04em; }
+    .feature-meta { margin-top: 10px; color: var(--muted); font-size: .875rem; }
+    .feature-heading > .external-link { flex-shrink: 0; }
+    .featured .video-wrap { border-radius: var(--radius); }
+    .feature-details { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 48px; padding-top: 24px; }
+    .project-description { color: var(--muted); font-size: 1rem; }
+    .project-description p + p { margin-top: 12px; }
+    .credits { margin: 0; font-size: .875rem; }
+    .credits dt { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 6px; }
+    .credits dd { margin: 0; color: var(--text); line-height: 1.65; }
+    .credits dd + dt { margin-top: 14px; }
+    .feature-credits { border-left: 1px solid var(--line); padding-left: 28px; }
+    .credit-note { margin-top: 10px; font-size: .8125rem; color: var(--muted); }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 60px; }
+    .project-card { border-top: 1px solid var(--line); padding-top: 24px; }
+    .project-card h3 { min-height: 2.4em; margin-bottom: 20px; max-width: 26ch; }
+    .project-card .project-description { margin-top: 20px; }
+    .project-card .credits { margin-top: 20px; }
+    .project-card .external-link { margin-top: 8px; }
+    .field-section { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 40px; }
+    .section-intro { max-width: 73ch; margin-top: 16px; font-size: 1rem; color: var(--muted); }
+    .vertical-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .vertical-card { background: var(--panel); padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .vertical-card h3 { margin-bottom: 20px; font-size: 1.25rem; max-width: 30ch; min-height: 2.4em; }
+    .vertical-body { display: grid; grid-template-columns: 200px minmax(0, 1fr); align-items: start; gap: 22px; }
+    .video-wrap.portrait { aspect-ratio: 9 / 16; width: 100%; border-radius: 10px; }
+    .vertical-card .project-description { font-size: 1rem; }
+    .vertical-card .credits { margin-top: 18px; font-size: .8125rem; }
+    .vertical-card .external-link { margin-top: 8px; }
+    .media-note { font-size: .75rem; color: var(--muted); margin-top: 10px; }
+    .about-section { border-top: 1px solid var(--line); margin-top: 64px; padding-top: 40px; }
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 64px; }
+    .about-copy { color: var(--muted); font-size: 1rem; }
+    .about-copy p + p { margin-top: 16px; }
+    .about-copy strong { color: var(--text); font-weight: 500; }
+    .contact-section {
+      display: flex; justify-content: space-between; align-items: center; gap: 28px;
+      margin: 56px 0 36px; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 32px; background: var(--panel);
     }
-
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .headshot-wrap {
-        max-width: 360px;
-      }
+    .contact-section h2 { font-size: 1.65rem; margin-bottom: 6px; }
+    .contact-section p { color: var(--muted); font-size: .875rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+      min-height: 48px; padding: 12px 20px; border-radius: 999px; font-size: .875rem;
+      font-weight: 600; background: var(--text); color: var(--bg); text-decoration: none;
+      border: 1px solid var(--text); overflow-wrap: anywhere;
     }
+    .button:hover { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 28px; color: var(--muted); font-size: .75rem; }
+    .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
 
+    @media (max-width: 1100px) {
+      .hero-grid { gap: 32px; }
+      .vertical-body { grid-template-columns: 1fr; gap: 20px; }
+      .portrait-holder { width: min(100%, 260px); margin-inline: auto; }
+      .vertical-card h3 { min-height: 2.4em; }
+    }
+    @media (max-width: 1060px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-intro { max-width: 760px; gap: 32px; }
+      .hero-copy h1 { font-size: 3.25rem; }
+    }
+    @media (max-width: 800px) {
+      .hero { padding-top: 36px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .subhead { max-width: 55ch; }
+      .positioning { max-width: none; }
+      .hero-link { justify-self: start; }
+      .feature-details { gap: 28px; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+      .project-grid { gap: 24px; }
+      .about-grid { gap: 32px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
+      .contact-section { align-items: start; flex-direction: column; }
+    }
     @media (max-width: 640px) {
-      .hero {
-        padding-top: 16px;
-        align-items: start;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .subhead {
-        font-size: 1rem;
-      }
+      .container { width: calc(100% - 36px); }
+      .site-header { min-height: 76px; gap: 12px; }
+      .site-name { font-size: .75rem; letter-spacing: .07em; }
+      .site-nav { gap: 12px; }
+      .site-nav a { font-size: .8125rem; }
+      .hero { padding: 32px 0 36px; }
+      .hero-intro { gap: 24px; }
+      .positioning { font-size: 1rem; }
+      .subhead { font-size: 1rem; }
+      .hero-link { margin-top: 8px; }
+      .reel-card { padding: 12px; border-radius: 14px; }
+      .reel-heading { margin-top: -4px; margin-bottom: 4px; }
+      .reel-caption { font-size: .75rem; }
+      .selected-work { padding-top: 28px; }
+      .feature-heading { display: block; margin-bottom: 16px; }
+      .feature-heading > .external-link { margin-top: 4px; }
+      .feature-meta { font-size: .8125rem; }
+      .featured .video-wrap { border-radius: 12px; }
+      .feature-details { grid-template-columns: 1fr; gap: 20px; padding-top: 20px; }
+      .feature-credits { padding: 16px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+      .project-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+      .project-card h3 { min-height: 0; max-width: none; margin-bottom: 18px; }
+      .field-section { margin-top: 32px; padding-top: 28px; }
+      .vertical-grid { grid-template-columns: 1fr; }
+      .vertical-card { padding: 20px; }
+      .vertical-card h3 { min-height: 0; max-width: none; }
+      .portrait-holder { width: min(100%, 280px); }
+      .vertical-card .project-description { font-size: 1rem; }
+      .vertical-card .credits { font-size: .875rem; }
+      .about-section { margin-top: 40px; padding-top: 28px; }
+      .about-grid { grid-template-columns: 1fr; gap: 20px; }
+      .about-copy { font-size: 1rem; }
+      .contact-section { padding: 24px; margin-top: 32px; gap: 20px; }
+      .button { max-width: 100%; font-size: .8125rem; padding-inline: 16px; }
+      .site-footer { align-items: start; }
+      .site-footer p { max-width: 24ch; }
+    }
+    @media (max-width: 560px) {
+      .hero-intro { grid-template-columns: 1fr; gap: 22px; }
+      .hero-copy h1 { font-size: 3rem; }
+      .headshot { width: 152px; height: 184px; border-radius: 12px; }
+      .positioning { margin-top: 18px; }
+    }
+    @media (max-width: 360px) {
+      .site-header { align-items: start; flex-direction: column; gap: 0; padding-block: 8px; }
+      .hero-copy h1 { font-size: 2.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
-<body>
-  <header class="container">
-    <div class="site-name">Josh Malin</div>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="container site-header">
+    <a class="site-name" href="#top" aria-label="Josh Malin, back to top">Josh Malin</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#selected-work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main class="hero">
-    <section class="container hero-grid">
-      <div class="headshot-wrap">
-        <img src="headshot2026.jpg" alt="Josh Malin headshot" class="headshot">
-      </div>
-
-      <div>
-        <div class="eyebrow">Video Editor • Post-Production • Motion Graphics</div>
-        <h1>Josh Malin</h1>
-        <p class="subhead">
-          Video editor and post-production specialist with a background in commercial, branded, and field production. Experienced in shaping polished edits, motion graphics support, color, audio cleanup, and fast-turnaround delivery.
-        </p>
-
-        <div class="buttons">
-          <a class="button primary" href="https://vimeo.com/922175413" target="_blank" rel="noopener noreferrer">Open Reel on Vimeo</a>
-          <a class="button" href="mailto:joshuapaulmalin@gmail.com">Contact</a>
+  <main id="main" class="container" tabindex="-1">
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="hero-grid">
+        <div class="hero-intro">
+          <img class="headshot" src="headshot2026.jpg" alt="Josh Malin" width="3073" height="2991" fetchpriority="high" decoding="async">
+          <div class="hero-copy">
+            <h1 id="intro-title">Josh Malin</h1>
+            <p class="hero-location">Lakewood, Colorado</p>
+            <p class="positioning"><span class="role-line"><span class="role">Videographer</span> <span class="separator">•</span> <span class="role">Video Editor</span></span><span class="role-line">Multimedia Producer</span></p>
+            <p class="subhead">I’m a videographer and video editor with 15+ years of experience. My work spans commercial production, corporate video, and independent projects.</p>
+            <a class="hero-link" href="#featured-film">View selected work</a>
+          </div>
         </div>
 
-        <div class="reel-card">
-          <p class="reel-label">Demo Reel</p>
+        <section class="reel-card" id="reel" aria-labelledby="reel-title">
+          <div class="reel-heading">
+            <h2 id="reel-title">Demo Reel</h2>
+            <a class="external-link" href="https://vimeo.com/922175413" target="_blank" rel="noopener noreferrer" aria-label="Open demo reel on Vimeo, new tab">Open on Vimeo</a>
+          </div>
           <div class="video-wrap">
-            <iframe
-              src="https://player.vimeo.com/video/922175413?title=0&byline=0&portrait=0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <iframe src="https://player.vimeo.com/video/922175413?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;dnt=1" title="Josh Malin — Demo Reel" width="1280" height="720" loading="eager" allow="fullscreen; picture-in-picture; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="contact-line">
-            Denver, CO • Available for remote opportunities
+          <p class="reel-caption">A cross-section of my production and post-production work.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="selected-work" id="selected-work" aria-labelledby="work-title">
+      <h2 class="sr-only" id="work-title">Selected work</h2>
+      <article class="featured" id="featured-film" aria-labelledby="bts-title">
+        <div class="feature-heading">
+          <div>
+            <p class="eyebrow accent">Selected work</p>
+            <h3 id="bts-title">C Lazy U Ranch Commercial BTS</h3>
+            <p class="feature-meta">13 minutes</p>
           </div>
+          <a class="external-link" href="https://youtu.be/HaMlqV622tA" target="_blank" rel="noopener noreferrer" aria-label="Watch C Lazy U Ranch Commercial BTS on YouTube, new tab">View on YouTube</a>
+        </div>
+        <div class="video-wrap">
+          <a class="video-launch" href="https://www.youtube.com/watch?v=HaMlqV622tA" data-player-src="https://www.youtube-nocookie.com/embed/HaMlqV622tA?autoplay=1&amp;playsinline=1&amp;rel=0" data-player-title="C Lazy U Ranch Commercial BTS — 13-minute webisode" aria-label="Play C Lazy U Ranch Commercial BTS — 13-minute webisode">
+              <img src="https://i.ytimg.com/vi/HaMlqV622tA/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+              <span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v18l15-9z"/></svg></span>
+              <span class="play-label" aria-hidden="true">Play webisode</span>
+            </a>
+        </div>
+        <div class="feature-details">
+          <div class="project-description">
+            <p>A behind-the-scenes webisode for an upcoming series, following a commercial production at C Lazy U Ranch in Granby, Colorado. I edited interviews, dialogue, and B-roll from footage I captured throughout the shoot.</p>
+          </div>
+          <div class="feature-credits">
+            <dl class="credits">
+              <dt>My role</dt>
+              <dd><strong>Editor</strong>, BTS Videographer / Photographer</dd>
+              <dt>On-set roles</dt><dd>Camera Operator, Production Sound Mixer, Production Assistant</dd>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card" aria-labelledby="christy-title">
+          <p class="eyebrow">Corporate &amp; branded content</p>
+          <h3 id="christy-title">Christy Sports Corporate Hype Video</h3>
+          <div class="video-wrap">
+            <a class="video-launch" href="https://www.youtube.com/watch?v=_-y9Ghm96nk" data-player-src="https://www.youtube-nocookie.com/embed/_-y9Ghm96nk?autoplay=1&amp;playsinline=1&amp;rel=0" data-player-title="Christy Sports Corporate Hype Video" aria-label="Play Christy Sports Corporate Hype Video">
+              <img src="https://i.ytimg.com/vi/_-y9Ghm96nk/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+              <span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v18l15-9z"/></svg></span>
+              <span class="play-label" aria-hidden="true">Play video</span>
+            </a>
+          </div>
+          <div class="project-description">
+            <p>A corporate brand video for Christy Sports, produced from capture through final delivery as a solo shooter and editor.</p>
+          </div>
+          <dl class="credits">
+            <dt>My role</dt><dd>Director of Photography, Editor, Motion Graphics</dd>
+          </dl>
+          <a class="external-link" href="https://youtu.be/_-y9Ghm96nk" target="_blank" rel="noopener noreferrer" aria-label="Watch Christy Sports Corporate Hype Video on YouTube, new tab">View on YouTube</a>
+        </article>
+
+        <article class="project-card" aria-labelledby="commercial-title">
+          <p class="eyebrow">Commercial crew production</p>
+          <h3 id="commercial-title">C Lazy U Ranch Main Commercial</h3>
+          <div class="video-wrap">
+            <a class="video-launch" href="https://www.youtube.com/watch?v=LMoffRCWfgo" data-player-src="https://www.youtube-nocookie.com/embed/LMoffRCWfgo?autoplay=1&amp;playsinline=1&amp;rel=0" data-player-title="C Lazy U Ranch Main Commercial — camera and production sound contribution" aria-label="Play C Lazy U Ranch Main Commercial — camera and production sound contribution">
+              <img src="https://i.ytimg.com/vi/LMoffRCWfgo/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+              <span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v18l15-9z"/></svg></span>
+              <span class="play-label" aria-hidden="true">Play video</span>
+            </a>
+          </div>
+          <div class="project-description">
+            <p>A commercial filmed at C Lazy U Ranch in Granby, Colorado, as part of a larger production crew.</p>
+          </div>
+          <dl class="credits">
+            <dt>My role · Production</dt><dd>Camera Operator, Production Sound Mixer, BTS Videographer / Photographer, Production Assistant</dd>
+          </dl>
+          <a class="external-link" href="https://youtu.be/LMoffRCWfgo" target="_blank" rel="noopener noreferrer" aria-label="Watch C Lazy U Ranch Main Commercial on YouTube, new tab">View on YouTube</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="field-section" id="real-estate" aria-labelledby="field-title">
+      <p class="eyebrow">Independent field production</p>
+      <h2 id="field-title">Real estate production</h2>
+      <p class="section-intro">I’ve produced thousands of real estate media projects as a solo operator, managing on-site direction, photography, video, drone capture, and media delivery within a fast-paced shooting schedule.</p>
+      <div class="vertical-grid">
+        <article class="vertical-card" aria-labelledby="walkthrough-title">
+          <h3 id="walkthrough-title">Property Walkthrough With Host</h3>
+          <div class="vertical-body">
+            <div class="portrait-holder">
+              <div class="video-wrap portrait">
+                <a class="video-launch" href="https://www.youtube.com/watch?v=8Of46jrhxbs" data-player-src="https://www.youtube-nocookie.com/embed/8Of46jrhxbs?autoplay=1&amp;playsinline=1&amp;rel=0" data-player-title="Property Walkthrough With Host — vertical video" aria-label="Play Property Walkthrough With Host — vertical video">
+              <img src="https://i.ytimg.com/vi/8Of46jrhxbs/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+              <span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v18l15-9z"/></svg></span>
+              <span class="play-label" aria-hidden="true">Play video</span>
+            </a>
+              </div>
+              <p class="media-note"><em>Music removed for portfolio use.</em></p>
+            </div>
+            <div>
+              <div class="project-description">
+                <p>A hosted property walkthrough combining architectural coverage, agent content, and aerial footage.</p>
+              </div>
+              <dl class="credits">
+                <dt>My role</dt><dd>Photographer, Videographer, Drone Operator, Director</dd>
+              </dl>
+              <a class="external-link" href="https://www.youtube.com/shorts/8Of46jrhxbs" target="_blank" rel="noopener noreferrer" aria-label="Watch Property Walkthrough With Host on YouTube, new tab">View on YouTube</a>
+            </div>
+          </div>
+        </article>
+        <article class="vertical-card" aria-labelledby="agent-title">
+          <h3 id="agent-title">Agent Branding Interview / Testimonial</h3>
+          <div class="vertical-body">
+            <div class="portrait-holder">
+              <div class="video-wrap portrait">
+                <a class="video-launch" href="https://www.youtube.com/watch?v=m-g9VLHyeYc" data-player-src="https://www.youtube-nocookie.com/embed/m-g9VLHyeYc?autoplay=1&amp;playsinline=1&amp;rel=0" data-player-title="Agent Branding Interview / Testimonial — vertical video" aria-label="Play Agent Branding Interview / Testimonial — vertical video">
+              <img src="https://i.ytimg.com/vi/m-g9VLHyeYc/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+              <span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v18l15-9z"/></svg></span>
+              <span class="play-label" aria-hidden="true">Play video</span>
+            </a>
+              </div>
+            </div>
+            <div>
+              <div class="project-description">
+                <p>An agent testimonial filmed as part of a real estate branding shoot. I managed the interview and supporting visuals independently, from setup through media delivery.</p>
+              </div>
+              <dl class="credits">
+                <dt>My role</dt><dd>Director, Videographer, Photographer, Production Audio</dd>
+              </dl>
+              <a class="external-link" href="https://www.youtube.com/shorts/m-g9VLHyeYc" target="_blank" rel="noopener noreferrer" aria-label="Watch Agent Branding Interview / Testimonial on YouTube, new tab">View on YouTube</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <h2 id="about-title">About</h2>
+        </div>
+        <div class="about-copy">
+          <p>My experience spans editing, cinematography, interview production, and production sound. I work in <strong>Adobe Premiere Pro, DaVinci Resolve, and After Effects</strong>, bringing together story, dialogue, motion graphics, color, audio, and finishing.</p>
+          <p>I’m comfortable running a shoot independently or contributing within a larger production. Directing people on camera, solving technical challenges in the field, and managing multiple deliverables are part of my day-to-day work. I also bring drone cinematography experience and an <strong>FAA Part 107 Remote Pilot Certificate</strong>.</p>
         </div>
       </div>
     </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <h2 id="contact-title">Contact</h2>
+        <p>Open to videography, editing, and multimedia opportunities.</p>
+      </div>
+      <a class="button" href="mailto:joshuapaulmalin@gmail.com">Email me</a>
+    </section>
   </main>
+  <footer class="container site-footer">
+    <p>Josh Malin <span aria-hidden="true">·</span> Based in Lakewood, Colorado</p>
+    <a href="#top">Back to top</a>
+  </footer>
+<script>
+    // Keep offscreen videos lightweight; initialize a player only after a play action.
+    document.querySelectorAll('.video-launch').forEach(function (link) {
+      link.setAttribute('role', 'button');
+      link.addEventListener('keydown', function (event) {
+        if (event.key === ' ') { event.preventDefault(); link.click(); }
+      });
+      link.addEventListener('click', function (event) {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        var player = document.createElement('iframe');
+        player.src = link.dataset.playerSrc;
+        player.title = link.dataset.playerTitle;
+        player.allow = 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
+        player.referrerPolicy = 'strict-origin-when-cross-origin';
+        player.allowFullscreen = true;
+        link.replaceWith(player);
+        player.focus();
+      });
+    });
+  </script>
 </body>
 </html>
